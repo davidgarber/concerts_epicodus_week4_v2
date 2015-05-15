@@ -65,4 +65,16 @@ describe('The app', :type => :feature) do
       expect(page).to have_content('Tina Turner')
     end
   end
+
+  describe('delete the band') do
+    it('visits the index') do
+      visit('/')
+      click_link('Go to the bands list')
+      fill_in('name', with: 'Ike and Tina Turner')
+      click_button('Submit')
+      click_link('Ike and Tina Turner')
+      click_button('Delete this band')
+      expect(page).to have_content('')
+    end
+  end
 end

@@ -51,3 +51,11 @@ patch('/band/:id') do
   @band.update({:name => name})
   erb(:band_detail)
 end
+
+delete('/band/:id') do
+  id = params.fetch("id")
+  @band = Band.find(id)
+  @band.destroy()
+  @bands = Band.all()
+  erb(:band_list)
+end
