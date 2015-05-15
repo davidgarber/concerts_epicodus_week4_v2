@@ -52,4 +52,17 @@ describe('The app', :type => :feature) do
       expect(page).to have_content('Roseland')
     end
   end
+
+  describe('update the band') do
+    it('visits the index') do
+      visit('/')
+      click_link('Go to the bands list')
+      fill_in('name', with: 'Ike and Tina Turner')
+      click_button('Submit')
+      click_link('Ike and Tina Turner')
+      fill_in('name', with: 'Tina Turner')
+      click_button('Submit')
+      expect(page).to have_content('Tina Turner')
+    end
+  end
 end
