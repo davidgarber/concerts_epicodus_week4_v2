@@ -13,4 +13,9 @@ describe(Venue) do
       band = Band.new({:name => ""})
       expect(band.save()).to(eq(false))
     end
+
+    it("converts the name of the venue to capitalized") do
+      venue = Venue.create({:name => "roseland"})
+      expect(venue.name()).to(eq("Roseland"))
+    end
   end

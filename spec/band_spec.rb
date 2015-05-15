@@ -13,11 +13,9 @@ describe(Band) do
       band = Band.new({:name => ""})
       expect(band.save()).to(eq(false))
     end
-  end
 
-
-#     it("validates the name of the band is capitalized") do
-#       band = Band.new({:name => "beyonce"})
-#       expect(band.save()).to(eq(false))
-#     end
-# end
+    it("converts the name of the band to capitalized") do
+      band = Band.create({:name => "beyonce"})
+      expect(band.name()).to(eq("Beyonce"))
+      end
+    end

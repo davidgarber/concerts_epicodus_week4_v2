@@ -17,10 +17,14 @@ get('/bands') do
 end
 
 post('/add_band') do
-  name = params.fetch("name")
-  Band.create({:name => name})
   @bands = Band.all()
-  erb(:band_list)
+  name = params.fetch("name")
+  @new_band = Band.new({:name => name})
+  if @new_band.save()
+    erb(:band_list)
+  else
+    erb(:errors)
+  end
 end
 
 get('/band/:id') do

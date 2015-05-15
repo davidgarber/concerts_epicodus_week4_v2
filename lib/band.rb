@@ -2,9 +2,10 @@ class Band < ActiveRecord::Base
   has_and_belongs_to_many(:venues)
 
   validates(:name, :presence => true)
+  before_save(:capitalize_name)
+
 
   define_singleton_method(:find_venue) do |name|
-    before_save(:title_case)
 
     found_venue = nil
     Venue.all().each() do |venue|
@@ -17,11 +18,7 @@ class Band < ActiveRecord::Base
 
   private
 
-  define_method(:title_case) do
-    split_sentence = self.split
-    split_sentence.each do |word|
-      word.capitalize!()
+  define_method(:capitalize_name) do
+      self.name=(name().capitalize())
     end
-    split_sentence.join(" ")
-  end
 end

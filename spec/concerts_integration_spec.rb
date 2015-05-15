@@ -15,9 +15,9 @@ describe('The app', :type => :feature) do
     it('visits the index') do
       visit('/')
       click_link('Go to the bands list')
-      fill_in('name', with: 'Jay-Z')
+      fill_in('name', with: 'Beyonce')
       click_button('Submit')
-      expect(page).to have_content('Jay-Z')
+      expect(page).to have_content('Beyonce')
     end
   end
 
@@ -25,10 +25,10 @@ describe('The app', :type => :feature) do
     it('visits the index') do
       visit('/')
       click_link('Go to the bands list')
-      fill_in('name', with: 'Jay-Z')
+      fill_in('name', with: 'Beyonce')
       click_button('Submit')
-      click_link('Jay-Z')
-      expect(page).to have_content('Jay-Z')
+      click_link('Beyonce')
+      expect(page).to have_content('Beyonce')
     end
   end
 
@@ -57,12 +57,12 @@ describe('The app', :type => :feature) do
     it('visits the index') do
       visit('/')
       click_link('Go to the bands list')
-      fill_in('name', with: 'Ike and Tina Turner')
+      fill_in('name', with: 'Beyonce')
       click_button('Submit')
-      click_link('Ike and Tina Turner')
-      fill_in('name', with: 'Tina Turner')
+      click_link('Beyonce')
+      fill_in('name', with: 'Beyonces')
       click_button('Submit')
-      expect(page).to have_content('Tina Turner')
+      expect(page).to have_content('Beyonces')
     end
   end
 
@@ -70,9 +70,9 @@ describe('The app', :type => :feature) do
     it('visits the index') do
       visit('/')
       click_link('Go to the bands list')
-      fill_in('name', with: 'Ike and Tina Turner')
+      fill_in('name', with: 'Beyonce')
       click_button('Submit')
-      click_link('Ike and Tina Turner')
+      click_link('Beyonce')
       click_button('Delete this band')
       expect(page).to have_content('')
     end
