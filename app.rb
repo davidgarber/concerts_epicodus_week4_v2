@@ -76,3 +76,12 @@ delete('/band/:id') do
   @bands = Band.all()
   erb(:band_list)
 end
+
+post('/add_band/:id') do
+  @name = params.fetch("name")
+  @venue_id = params.fetch("id")
+  @venue = Venue.find(@venue_id)
+  update_band = Band.find_band(@name)
+  @venue.bands.push(update_band)
+  erb(:venue_detail)
+end

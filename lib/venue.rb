@@ -4,7 +4,6 @@ class Venue < ActiveRecord::Base
   validates(:name, :presence => true)
   before_save(:capitalize_name)
 
-
   define_singleton_method(:find_venue) do |name|
 
     found_venue = nil
@@ -19,6 +18,6 @@ class Venue < ActiveRecord::Base
   private
 
   define_method(:capitalize_name) do
-    self.name=(name().capitalize())
+    self.name=self.name.titlecase()
   end
 end
