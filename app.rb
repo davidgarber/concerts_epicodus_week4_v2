@@ -22,3 +22,8 @@ post('/add_band') do
   @bands = Band.all()
   erb(:band_list)
 end
+
+get('/band/:id') do
+  @band = Band.find(params.fetch("id"))
+  erb(:band_detail)
+end

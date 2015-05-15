@@ -20,4 +20,15 @@ describe('The app', :type => :feature) do
       expect(page).to have_content('Jay-Z')
     end
   end
+
+  describe('the band detail') do
+    it('visits the index') do
+      visit('/')
+      click_link('Go to the bands list')
+      fill_in('name', with: 'Jay-Z')
+      click_button('Submit')
+      click_link('Jay-Z')
+      expect(page).to have_content('Jay-Z')
+    end
+  end
 end
