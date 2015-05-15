@@ -8,4 +8,16 @@ describe(Band) do
       test_band = Band.new({:name => "Jay-Z", :venue_ids => [test_venue1.id(), test_venue2.id()]})
     end
   end
-end
+
+    it("validates presence of a name") do
+      band = Band.new({:name => ""})
+      expect(band.save()).to(eq(false))
+    end
+  end
+
+
+#     it("validates the name of the band is capitalized") do
+#       band = Band.new({:name => "beyonce"})
+#       expect(band.save()).to(eq(false))
+#     end
+# end
