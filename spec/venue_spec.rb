@@ -8,4 +8,9 @@ describe(Venue) do
       test_venue = Venue.new({:name => "Roseland", :band_ids => [test_band1.id(), test_band2.id()]})
     end
   end
-end
+
+    it("validates presence of a name") do
+      band = Band.new({:name => ""})
+      expect(band.save()).to(eq(false))
+    end
+  end
