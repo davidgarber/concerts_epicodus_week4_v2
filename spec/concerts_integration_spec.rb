@@ -31,4 +31,14 @@ describe('The app', :type => :feature) do
       expect(page).to have_content('Jay-Z')
     end
   end
+
+  describe('the venues path') do
+    it('visits the index') do
+      visit('/')
+      click_link('Go to the venues list')
+      fill_in('name', with: 'Roseland')
+      click_button('Submit')
+      expect(page).to have_content('Roseland')
+    end
+  end
 end
