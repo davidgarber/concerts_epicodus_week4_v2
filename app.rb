@@ -23,7 +23,7 @@ post('/add_band') do
   if @new_band.save()
     erb(:band_list)
   else
-    erb(:errors)
+    erb(:errors_band)
   end
 end
 
@@ -47,10 +47,14 @@ get('/venues') do
 end
 
 post('/add_venue') do
-  name = params.fetch("name")
-  Venue.create({:name => name})
   @venues = Venue.all()
-  erb(:venue_list)
+  name = params.fetch("name")
+  @new_venue = Venue.new({:name => name})
+  if @new_venue.save()
+    erb(:venue_list)
+  else
+    erb(:errors_venue)
+  end
 end
 
 get('/venue/:id') do
