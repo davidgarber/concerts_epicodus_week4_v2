@@ -37,6 +37,17 @@ post('/add_venue/:id') do
   @band_id = params.fetch("id")
   @band = Band.find(@band_id)
   update_venue = Venue.find_venue(@name)
+  add_venue = Venue.new({:name => @name, :band_ids => @band_id})
+  @band.venues.push(update_venue)
+  erb(:band_detail)
+end
+
+patch('/add_venue/:id') do
+  @name = params.fetch("name")
+  @band_id = params.fetch("id")
+  @band = Band.find(@band_id)
+  update_venue = Venue.find_name(@name)
+  add_venue = Venue.new({:name => @name, :band_ids => @band_id})
   @band.venues.push(update_venue)
   erb(:band_detail)
 end
