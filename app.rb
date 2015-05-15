@@ -39,3 +39,8 @@ post('/add_venue') do
   @venues = Venue.all()
   erb(:venue_list)
 end
+
+get('/venue/:id') do
+  @venue = Venue.find(params.fetch("id"))
+  erb(:venue_detail)
+end
