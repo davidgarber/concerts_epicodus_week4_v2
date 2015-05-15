@@ -28,6 +28,15 @@ get('/band/:id') do
   erb(:band_detail)
 end
 
+post('/add_venue/:id') do
+  @name = params.fetch("name")
+  @band_id = params.fetch("id")
+  @band = Band.find(@band_id)
+  update_venue = Venue.find_venue(@name)
+  @band.venues.push(update_venue)
+  erb(:band_detail)
+end
+
 get('/venues') do
   @venues = Venue.all()
   erb(:venue_list)

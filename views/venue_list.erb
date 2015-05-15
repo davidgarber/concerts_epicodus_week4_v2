@@ -1,0 +1,19 @@
+<h1>Here are all of the venues:</h1>
+
+<a href='/'>Return to home</a>
+
+<ul>
+  <% @venues.each do |venue| %>
+  <li><a href="/venue/<%= venue.id %>"><%= venue.name %></a></li>
+  <% end %>
+</ul>
+
+<h4>Add a venue below:</h4>
+
+<form action="/add_venue" method="post">
+  <label for="name">Name:</label>
+  <input id="name" name="name" type="text">
+
+  <button type="submit">Submit</button>
+
+</form>

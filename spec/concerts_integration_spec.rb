@@ -77,4 +77,14 @@ describe('The app', :type => :feature) do
       expect(page).to have_content('')
     end
   end
+
+  describe('adding a venue to a band') do
+    it('visits the index') do
+      visit('/')
+      click_link('Go to the bands list')
+      fill_in('name', with: 'Roseland')
+      click_button('Submit')
+      expect(page).to have_content('Roseland')
+    end
+  end
 end
