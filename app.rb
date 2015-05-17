@@ -95,3 +95,11 @@ post('/add_band/:id') do
   @venue.bands.push(update_band)
   erb(:venue_detail)
 end
+
+delete('/venue/:id') do
+  id = params.fetch("id")
+  @venue = Venue.find(id)
+  @venue.destroy()
+  @venues = Venue.all()
+  erb(:venue_list)
+end

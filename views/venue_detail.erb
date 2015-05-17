@@ -18,5 +18,12 @@
   <input id="name" name="name" type="text">
 
   <button name="submit">Submit</button>
+</form>
 
+
+<br>
+
+<form action='/venue/<%= @venue.id %>' method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">Delete this venue</button>
 </form>
