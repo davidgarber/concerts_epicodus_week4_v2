@@ -1,0 +1,22 @@
+<h1>Here are the details for <%= @venue.name() %>:</h1>
+
+<a href="/venues">Return to the venues list</a><br><br>
+
+<a href="/">Return to home</a>
+
+<h3>These are the bands that have played <%= @venue.name() %>:</h3>
+<ul>
+  <% @venue.bands.each() do |band| %>
+  <li><%= band.name() %></li>
+  <% end %>
+</ul>
+
+<h3>Add a band below:</h3>
+
+<form action="/add_band/<%= @venue.id %>" method="post">
+  <label for="name">Name:</label>
+  <input id="name" name="name" type="text">
+
+  <button name="submit">Submit</button>
+
+</form>
