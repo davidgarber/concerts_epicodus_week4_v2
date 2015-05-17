@@ -60,9 +60,9 @@ describe('The app', :type => :feature) do
       fill_in('name', with: 'Beyonce')
       click_button('Submit')
       click_link('Beyonce')
-      fill_in('new_name', with: 'Beyonces')
+      fill_in('new_name', with: 'M')
       click_button('Update')
-      expect(page).to have_content('Beyonces')
+      expect(page).to have_content('M')
     end
   end
 

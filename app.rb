@@ -32,17 +32,14 @@ get('/band/:id') do
   erb(:band_detail)
 end
 
-post('/add_venue/:id') do
-  @name = params.fetch("name")
-  @band_id = params.fetch("id")
-  @band = Band.find(@band_id)
-  add_venue = Venue.new({:name => @name, :band_ids => @band_id})
-  @band.venues.push(add_venue)
-  update_venue = Venue.find_venue(@name)
-  add_venue = Venue.new({:name => @name, :band_ids => @band_id})
-  @band.venues.push(update_venue)
-  erb(:band_detail)
-end
+# post('/add_venue/:id') do
+#   @name = params.fetch("name")
+#   @band_id = params.fetch("id")
+#   @band = Band.find(@band_id)
+#   add_venue = Venue.new({:name => @name, :band_ids => @band_id})
+#   @band.venues.push(add_venue)
+#   erb(:band_detail)
+# end
 
 patch('/add_venue/:id') do
   @name = params.fetch("name")
@@ -50,9 +47,6 @@ patch('/add_venue/:id') do
   @band = Band.find(@band_id)
   add_venue = Venue.new({:name => @name, :band_ids => @band_id})
   @band.venues.push(add_venue)
-  update_venue = Venue.find_name(@name)
-  add_venue = Venue.new({:name => @name, :band_ids => @band_id})
-  @band.venues.push(update_venue)
   erb(:band_detail)
 end
 
@@ -81,9 +75,7 @@ patch('/band/:id') do
   new_name = params.fetch('new_name')
   @band = Band.find(params.fetch('id').to_i())
   @band.update({:name => new_name})
-  name = params.fetch('name')
-  @band = Band.find(params.fetch('id').to_i())
-  @band.update({:name => name})
+  new_name = params.fetch('new_name')
   erb(:band_detail)
 end
 

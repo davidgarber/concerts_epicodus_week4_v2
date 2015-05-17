@@ -1,4 +1,4 @@
-<h1>Here are the details for <%= @band.name() %>:</h1>
+<h1>Here are the details for <%= @band.name() %></h1>
 
 <a href="/bands">Return to the bands list</a><br><br>
 
@@ -25,18 +25,11 @@
 
   <form action="/band/<%= @band.id %>" method="post">
     <input name="_method" type="hidden" value="patch">
-
-<<<<<<< HEAD
     <label for="new_name">New Name:</label>
     <input id="new_name" name="new_name" type="text">
 
     <button type="update">Update</button>
-=======
-    <label for="name">Name:</label>
-    <input id="name" name="name" type="text">
 
-    <button type="submit">Submit</button>
->>>>>>> 08b97a120fa593e852c7868e2031f9c1854d4803
   </form>
 
   <br>
