@@ -41,4 +41,16 @@ set(:show_exceptions, false)
       expect(page).to have_content('Beyonce')
     end
   end
+
+  describe('delete the venue') do
+    it('visits the index') do
+      visit('/')
+      click_link('Go to the venues list')
+      fill_in('name', with: 'Roseland')
+      click_button('Submit')
+      click_link('Roseland')
+      click_button('Delete this venue')
+      expect(page).to have_content('')
+    end
+  end
 end
