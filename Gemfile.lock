@@ -42,15 +42,6 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    arel (6.0.0)
-    backports (3.6.4)
-    builder (3.2.2)
-    diff-lcs (1.2.5)
-    i18n (0.7.0)
-    json (1.8.2)
-    minitest (5.6.1)
-    multi_json (1.11.0)
-    pg (0.18.2)
     rack (1.6.1)
     rack-protection (1.5.3)
       rack
@@ -100,7 +91,6 @@ DEPENDENCIES
   launchy
   pg
   pry
-  pg
   rake
   rspec
   sinatra
