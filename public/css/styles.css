@@ -1,7 +1,40 @@
-h1 {
-  color: red;
+body {
+  background: url("http://www.ziogiorgio.com/images/2009/clay%20paky/Eros%20Ramazzotti%203.jpg");
+  background-size: cover;
+  color: white;
 }
 
-h2 {
-  color: blue;
+.container {
+  margin-top: 150px;
+  min-height: 500px;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,.6);
+}
+
+.button-wrapper {
+  text-align: center;
+}
+
+#submit-button {
+  margin-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.page-header {
+  margin-bottom: 50px;
+}
+
+#result-wrapper {
+  margin-top: 100px;
+  font-size: 30px;
+  text-align: center;
+}
+
+#result-wrapper p:first-child {
+  font-size: 20px;
+}
+
+.results {
+  display: none;
 }

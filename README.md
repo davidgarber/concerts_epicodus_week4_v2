@@ -16,6 +16,8 @@ Run command $ postgres in terminal.
 
 Run command $ psql to start PSQL.
 
+$ rake db:create
+
 $ rake db:migrate
 
 In Bash run: $ bundle install
